@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Landing from "./components/landing/landing";
 import NavBar from "./components/navBar/navBar";
 import About from "./components/about/about";
-import CardClima from "./components/cardClima/cardClima";
+import Clima from "./components/clima/clima";
 
 const apiKey = "4ae2636d8dfbdc3044bede63951a019b";
 
@@ -18,7 +18,7 @@ function App() {
   function onSearch(ciudad) {
     //Llamado a la API del clima
     fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}`
+      `http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric`
     )
       .then((r) => r.json())
       .then((recurso) => {
@@ -35,6 +35,9 @@ function App() {
             clouds: recurso.clouds.all,
             latitud: recurso.coord.lat,
             longitud: recurso.coord.lon,
+            air: recurso.wind.speed,
+            humidity: recurso.main.humidity,
+            visibility: recurso.visibility,
           };
           setCities((oldCities) => [...oldCities, ciudad]);
         } else {
@@ -53,10 +56,10 @@ function App() {
 
   return (
     <div>
-      <NavBar />
-      <CardClima />
+      <NavBar onSearch={onSearch} />
+      
       <Routes>
-        <Route path="/" element={<Landing />} />
+        <Route path="/" element={<Clima cities={cities} onClose={onClose} />} />
         <Route path="/about" element={<About />} />
         
       </Routes>

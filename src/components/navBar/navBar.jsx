@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import SearchBar from '../searchBar/searchBar';
 
 
-export default function NavBar() {
+export default function NavBar({onSearch}) {
   return (
     <Box sx={{ flexGrow: 1 }} >
       <AppBar position="static" sx={{ bgcolor: "#1a237e" }}>
@@ -19,7 +19,7 @@ export default function NavBar() {
           >
             DELLACQUA CLIMA
           </Typography>
-          <SearchBar />
+          <SearchBar onSearch={onSearch} />
         </Toolbar>
       </AppBar>
     </Box>
