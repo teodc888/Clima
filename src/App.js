@@ -1,11 +1,10 @@
 import "./App.css";
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import Landing from "./components/landing/landing";
 import NavBar from "./components/navBar/navBar";
 import About from "./components/about/about";
 import Clima from "./components/clima/clima";
-
+import Ciudad from "./components/ciudad/ciudad";
 const apiKey = "4ae2636d8dfbdc3044bede63951a019b";
 
 function App() {
@@ -54,14 +53,17 @@ function App() {
     }
   }
 
+  console.log(cities.length === 0);
   return (
     <div>
       <NavBar onSearch={onSearch} />
-      
+      {
+        cities.length === 0 ? <h1>cargando...</h1> : null
+      }
       <Routes>
         <Route path="/" element={<Clima cities={cities} onClose={onClose} />} />
         <Route path="/about" element={<About />} />
-        
+        <Route path="/ciudad/:ciudadId" element={<Ciudad onFilter={onFilter} />} />
       </Routes>
     </div>
   );

@@ -5,7 +5,7 @@ import SearchIcon from '@mui/icons-material/Search';
 export default function SearchBar({ onSearch }) {
   const [city, setCity] = useState("");
 
-  console.log(city);
+
   return (
     <div>
       <form

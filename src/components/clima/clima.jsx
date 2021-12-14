@@ -2,7 +2,7 @@ import React from "react";
 import CardClima from "../cardClima/cardClima";
 import Grid from "@mui/material/Grid";
 export default function Clima({ cities, onClose }) {
-  console.log(cities);
+
   return (
     <div>
       <Grid
@@ -12,7 +12,7 @@ export default function Clima({ cities, onClose }) {
       >
         {cities.map((c) => {
           return (
-            <Grid item xs={2} sm={3} md={3}>
+            <Grid item xs={2} sm={3} md={3} key={c.id}>
               <CardClima
                 key={c.id}
                 id={c.id}
@@ -24,6 +24,8 @@ export default function Clima({ cities, onClose }) {
                 humidity={c.humidity}
                 air={c.air}
                 visibility={c.visibility}
+                clouds={c.clouds}
+                weather={c.weather}
                 onClose={() => onClose(c.id)}
               />
             </Grid>
