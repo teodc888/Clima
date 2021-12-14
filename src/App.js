@@ -2,16 +2,51 @@ import "./App.css";
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/navBar/navBar";
-import About from "./components/about/about";
 import Clima from "./components/clima/clima";
 import Ciudad from "./components/ciudad/ciudad";
+import About from "./components/about/about";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const apiKey = "4ae2636d8dfbdc3044bede63951a019b";
 
 function App() {
   const [cities, setCities] = useState([]);
 
+  const ciudadEncontrada = () => {
+    toast.success('Ciudad agregada con exito', {
+      position: "bottom-right",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      });
+  }
+  const errorCiudad = () => {
+    toast.error('Ciudad No encontrada', {
+      position: "bottom-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+    });
+  }
+  const ciudadRemovida = () => {
+    toast.error('Se elimino con exito', {
+      position: "bottom-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+    });
+  }
   function onClose(id) {
     setCities((oldCities) => oldCities.filter((c) => c.id !== id));
+    ciudadRemovida();
   }
 
   function onSearch(ciudad) {
@@ -39,8 +74,9 @@ function App() {
             visibility: recurso.visibility,
           };
           setCities((oldCities) => [...oldCities, ciudad]);
+          ciudadEncontrada()
         } else {
-          alert("Ciudad no encontrada");
+          errorCiudad()
         }
       });
   }
@@ -53,18 +89,19 @@ function App() {
     }
   }
 
-  console.log(cities.length === 0);
+  console.log(cities);
   return (
     <div>
       <NavBar onSearch={onSearch} />
-      {
-        cities.length === 0 ? <h1>cargando...</h1> : null
-      }
       <Routes>
         <Route path="/" element={<Clima cities={cities} onClose={onClose} />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/ciudad/:ciudadId" element={<Ciudad onFilter={onFilter} />} />
+        <Route
+          path="/ciudad/:ciudadId"
+          element={<Ciudad onFilter={onFilter} />}
+        />
+        <Route path="/about" element={<About setCities={setCities} />} />
       </Routes>
+      <ToastContainer />
     </div>
   );
 }

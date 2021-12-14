@@ -4,13 +4,13 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 export default function TempDia(props) {
   const dias = [
-    "domingo",
-    "lunes",
-    "martes",
-    "miércoles",
-    "jueves",
-    "viernes",
-    "sábado",
+    "DOMINGO",
+    "LUNES",
+    "MARTES",
+    "MIERCOLES",
+    "JUEVES",
+    "VIERNES",
+    "SABADO",
   ];
   const numeroDia = new Date(props.dt_txt).getDay();
   const nombreDia = dias[numeroDia];
@@ -35,34 +35,17 @@ export default function TempDia(props) {
     }
   }
 
-  function dia(){
-    if(nombreDia === "lunes"){
-      return "#e3f2fd"
-    }else if(nombreDia === "martes"){
-      return "#bbdefb"
-    }else if(nombreDia === "miércoles"){
-      return "#90caf9"
-    }else if(nombreDia === "jueves"){
-      return "#64b5f6"
-    }else if(nombreDia === "viernes"){
-      return "#42a5f5"
-    }else if(nombreDia === "sábado"){
-      return "#2196f3"
-    }else if(nombreDia === "domingo"){
-      return "#1e88e5"
-    }
-  }
   return (
     <>
-      <Card key={props.id} sx={{ height: 100, width: 900, bgcolor: dia() }}>
+      <Card key={props.id} sx={{ height: 100, width: 900, bgcolor: "#01579b",  borderRadius: "5px", color:"white" }}>
         <Grid container spacing={2} columns={16}>
           <Grid item xs={3.2}>
-            <Typography gutterBottom variant="h4" component="div">
+            <Typography gutterBottom variant="h5" component="div" sx={{marginLeft:"15px"}}>
               {nombreDia} 
             </Typography>
           </Grid>
           <Grid item xs={3.2}>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography gutterBottom variant="h5" component="div" sx={{marginLeft:"40px"}}>
              {props.dt_txt}
             </Typography>
           </Grid>
@@ -74,8 +57,8 @@ export default function TempDia(props) {
             />
           </Grid>
           <Grid item xs={3.2}>
-            <Typography gutterBottom variant="h6" component="div">
-              max: {props.max} / min: {props.min}
+            <Typography gutterBottom variant="h6" component="div" sx={{marginRight:"50px"}}>
+              max: {props.max}° min: {props.min}°
             </Typography>
           </Grid>
           <Grid item xs={3.2}>

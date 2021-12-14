@@ -5,6 +5,14 @@ export default function Clima({ cities, onClose }) {
 
   return (
     <div>
+      {cities.length === 0 ? (
+        <div align="center">
+          <img
+            alt="j"
+            src="https://media2.giphy.com/media/KBOrnz5he23pdtHSKl/giphy.gif?cid=ecf05e47gf4cyribvpvhwjs7nf65vepkjp5gysegbc2apr1j&rid=giphy.gif&ct=s"
+          />
+        </div>
+      ) : null}
       <Grid
         container
         spacing={{ xs: 2, md: 3 }}

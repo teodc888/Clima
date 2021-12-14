@@ -1,10 +1,11 @@
+import "./ciudad.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Stack from "@mui/material/Stack";
 import Card from "@mui/material/Card";
 import { useParams } from "react-router-dom";
 import TempDia from "../tempDia/tempDia";
-import { Icon, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import Brightness2Icon from '@mui/icons-material/Brightness2';
 const apiKey = "4ae2636d8dfbdc3044bede63951a019b";
@@ -26,7 +27,7 @@ export default function Ciudad({ onFilter }) {
 
       }, 1500)
     }
-  }, []);
+  }, [ciudad]);
 
   function timeConverter(UNIX_timestamp) {
     var a = new Date(UNIX_timestamp * 1000);
@@ -39,7 +40,7 @@ export default function Ciudad({ onFilter }) {
 
   console.log(ciudadData);
   return (
-    <>
+    <div className="fondoCiudad">
       {ciudadData !== "" ? (
         <>
           <Stack
@@ -52,7 +53,7 @@ export default function Ciudad({ onFilter }) {
               direction="column"
               alignItems="center"
               justifyContent="center"
-              sx={{ bgcolor: "white", marginTop: "20px" }}
+              sx={{ bgcolor: "#01579b", marginTop: "20px", height: "100%", width: "100%", color:"white" }}
             >
               <Typography gutterBottom variant="h1" textAlign="center" component="div">
                 {ciudadData.city.name}
@@ -84,6 +85,6 @@ export default function Ciudad({ onFilter }) {
 
         </div>
       )}
-    </>
+    </div>
   );
 }
