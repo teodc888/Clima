@@ -43,7 +43,7 @@ export default function CardClima(props) {
     }else if(props.weather === "Clear"){
       return `url(${"https://mir-s3-cdn-cf.behance.net/project_modules/disp/3ad89154827733.596dc6164dbd1.gif"})`
     }else if(props.weather === "Rain"){
-      return `url(${"https://mir-s3-cdn-cf.behance.net/project_modules/disp/d8b05154827733.596dc77a0361f.gif"})`
+      return `url(${"https://mir-s3-cdn-cf.behance.net/project_modules/disp/bee3d654827733.596dc6164dec2.gif"})`
     }else if(props.weather === "Snow"){
       return `url(${"https://mir-s3-cdn-cf.behance.net/project_modules/disp/617cfc54827733.596dc6164f4f4.gif"})`
     }else if(props.weather === "Drizzle"){
