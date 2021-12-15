@@ -25,7 +25,7 @@ export default function Ciudad({ onFilter }) {
           })
           .catch((err) => console.error(err));
 
-      }, 1500)
+      }, 500)
     }
   }, [ciudad]);
 
