@@ -8,7 +8,7 @@ import TempDia from "../tempDia/tempDia";
 import { Typography } from "@mui/material";
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import Brightness2Icon from '@mui/icons-material/Brightness2';
-const apiKey = "4ae2636d8dfbdc3044bede63951a019b";
+const apiKey = process.env.REACT_APP_API_KEY;
 export default function Ciudad({ onFilter }) {
   const { ciudadId } = useParams();
   const ciudad = onFilter(ciudadId);
