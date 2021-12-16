@@ -7,7 +7,7 @@ import Ciudad from "./components/ciudad/ciudad";
 import About from "./components/about/about";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-const apiKey = "4ae2636d8dfbdc3044bede63951a019b";
+const apiKey = process.env.REACT_APP_API_KEY;
 
 function App() {
   const [cities, setCities] = useState([]);
@@ -52,7 +52,7 @@ function App() {
   function onSearch(ciudad) {
     //Llamado a la API del clima
     fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric`
     )
       .then((r) => r.json())
       .then((recurso) => {

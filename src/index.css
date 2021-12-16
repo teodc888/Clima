@@ -5,11 +5,12 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     /* background-color: antiquewhite; */
-    background-image: url("https://www.xtrafondos.com/descargar.php?id=5846&resolucion=3840x2160");
+    /* background-image: url("https://www.xtrafondos.com/descargar.php?id=5846&resolucion=3840x2160");
     background-size: 100%;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center center; */
+    background-color: rgb(0, 0, 22);
     color:white;
     
   }

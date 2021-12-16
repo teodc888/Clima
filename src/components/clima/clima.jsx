@@ -20,7 +20,7 @@ export default function Clima({ cities, onClose }) {
       >
         {cities.map((c) => {
           return (
-            <Grid item xs={2} sm={3} md={3} key={c.id}>
+            <Grid item xs={4} sm={3} md={3} key={c.id}>
               <CardClima
                 key={c.id}
                 id={c.id}

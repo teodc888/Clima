@@ -34,6 +34,8 @@ export default function CardClima(props) {
       return "Neblina"
     }else if(props.weather === "Dust"){
       return "Polvo"
+    }else if(props.weather === "Fog"){
+      return "Niebla"
     }
   }
 
@@ -56,12 +58,14 @@ export default function CardClima(props) {
       return `url(${"https://mir-s3-cdn-cf.behance.net/project_modules/disp/7100a454827733.596dc61650827.gif"})`
     }else if(props.weather === "Dust"){
       return `url(${"https://mir-s3-cdn-cf.behance.net/project_modules/disp/7100a454827733.596dc61650827.gif"})`
+    }else if(props.weather === "Fog"){
+      return `url(${"https://mir-s3-cdn-cf.behance.net/project_modules/disp/7100a454827733.596dc61650827.gif"})`
     }
   }
 
   //bgcolor:"#bbdefb"
   return (
-    <Card sx={{ height: 645, width: 390,marginLeft:"20px", marginTop:"20px", backgroundImage: imagenFondo(), color:"white", borderRadius:"30px"}}>
+    <Card sx={{ height: 645, width: 390, marginTop:"20px", backgroundImage: imagenFondo(), color:"white", borderRadius:"30px"}}>
       <CardActions sx={{ ml: 39,  }}>
         <Button variant="outlined" color="error" sx={{borderRadius:"30px"}} onClick={props.onClose}>
           X
