@@ -18,7 +18,7 @@ export default function Ciudad({ onFilter }) {
       setTimeout(()=>{
         axios
           .get(
-            `http://api.openweathermap.org/data/2.5/forecast?q=${ciudad.name}&appid=${apiKey}&units=metric`
+            `https://api.openweathermap.org/data/2.5/forecast?q=${ciudad.name}&appid=${apiKey}&units=metric`
           )
           .then((data) => {
             setCiudadData(data.data);
