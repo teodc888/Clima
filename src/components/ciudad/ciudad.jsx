@@ -81,7 +81,7 @@ export default function Ciudad({ onFilter }) {
         </>
       ) : (
         <div align="center">
-          <img alt="j" src="https://media3.giphy.com/media/oBu7EkGffhCWaFTfJH/giphy.gif?cid=ecf05e47msv7p5f876uwxylwtp5au3drh7caa2hfiejfcp8h&rid=giphy.gif&ct=s" />
+          <img alt="j" width={350} src="https://media3.giphy.com/media/oBu7EkGffhCWaFTfJH/giphy.gif?cid=ecf05e47msv7p5f876uwxylwtp5au3drh7caa2hfiejfcp8h&rid=giphy.gif&ct=s" />
 
         </div>
       )}

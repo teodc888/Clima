@@ -9,6 +9,7 @@ export default function Clima({ cities, onClose }) {
         <div align="center">
           <img
             alt="j"
+            width={350}
             src="https://media2.giphy.com/media/KBOrnz5he23pdtHSKl/giphy.gif?cid=ecf05e47gf4cyribvpvhwjs7nf65vepkjp5gysegbc2apr1j&rid=giphy.gif&ct=s"
           />
         </div>
