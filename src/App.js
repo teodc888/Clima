@@ -89,7 +89,6 @@ function App() {
     }
   }
 
-  console.log(cities);
   return (
     <div>
       <NavBar onSearch={onSearch} />

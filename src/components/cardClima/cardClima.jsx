@@ -65,9 +65,9 @@ export default function CardClima(props) {
 
   //bgcolor:"#bbdefb"
   return (
-    <Card sx={{ height: 645, width: 390, backgroundImage: imagenFondo(), color:"white", borderRadius:"30px", margin:"auto"}}>
-      <CardActions sx={{ ml: 39,  }}>
-        <Button variant="outlined" color="error" sx={{borderRadius:"30px"}} onClick={props.onClose}>
+    <Card sx={{ height: "100%", width: "100%", backgroundImage: imagenFondo(), color:"white", borderRadius:"30px", margin:"auto"}}>
+      <CardActions >
+        <Button variant="contained" color="error" sx={{borderRadius:"30px"}} onClick={props.onClose}>
           X
         </Button>
       </CardActions>
